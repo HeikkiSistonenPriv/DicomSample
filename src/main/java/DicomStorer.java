@@ -4,6 +4,7 @@ public class DicomStorer {
         _dicomRepository = dicomRepository;
     }
     public void Store() {
+        _dicomRepository.Save();
 
     }
 }
