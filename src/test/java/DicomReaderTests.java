@@ -12,9 +12,9 @@ public class DicomReaderTests {
 
         FileFolderReader fileFolderReader = mock(FileFolderReader.class);
         DicomReader dicomReader = new DicomReader(fileFolderReader);
-        dicomReader.ReadFolder("any");
+        dicomReader.ReadFolder("c:\\dummydicoms");
 
-        verify(fileFolderReader).ReadFilesFromFolder("any");
+        verify(fileFolderReader).ReadFilesFromFolder("c:\\dummydicoms");
 
     }
 }

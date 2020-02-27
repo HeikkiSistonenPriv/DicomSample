@@ -15,6 +15,12 @@ public class DicomStoreTests {
         verify(dicomRepository).Save();
     }
 
+    @Test
+    public void WhenStoringDicomData_AllGivenDicomsShouldBeSaved()
+    {
+
+    }
+
 
 
 }
