@@ -23,7 +23,7 @@ public class FileFolderReaderTests {
         List<Path> filePaths = fileFolderReader.ReadFilesFromFolder("C:\\dummydicoms", ".DCM");
         // to save time.
         filePaths.forEach(f -> {
-            assertTrue(f.toAbsolutePath().getFileName().toString().toUpperCase().endsWith(".DCM"));
+            assertTrue(f.toAbsolutePath().toString().toUpperCase().endsWith(".DCM"));
         });
     }
 

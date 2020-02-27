@@ -11,7 +11,7 @@ public class FileFolderReader implements IFileFolderReader {
         List<Path> filepahts= null;
         try {
             filepahts = Files.walk(Paths.get(folderPath))
-                    .filter(f -> f.toAbsolutePath().getFileName().toString().toUpperCase().endsWith(extension) )
+                    .filter(f -> f.toAbsolutePath().toString().toUpperCase().endsWith(extension) )
                     .collect(Collectors.toList());
         } catch (IOException e) {
             e.printStackTrace();
