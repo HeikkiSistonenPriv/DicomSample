@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class DicomReader {
     IFileFolderReader _fileFolderReader;
     public DicomReader(IFileFolderReader fileFolderReader)
