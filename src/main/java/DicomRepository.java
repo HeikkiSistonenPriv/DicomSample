@@ -1,5 +1,7 @@
+import java.util.List;
+
 public class DicomRepository implements IDicomRepository {
-    public void Save() {
+    public void Save(List<DicomEntity> dicoms) {
 
     }
 }
