@@ -1,6 +1,7 @@
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.List;
 
 public interface IFileFolderReader {
-    List<String> ReadFilesFromFolder(String folderPath);
+    List<Path> ReadFilesFromFolder(String folderPath, String extension);
 }

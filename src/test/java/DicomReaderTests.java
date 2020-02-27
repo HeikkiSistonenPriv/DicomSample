@@ -14,7 +14,7 @@ public class DicomReaderTests {
         DicomReader dicomReader = new DicomReader(fileFolderReader);
         dicomReader.ReadFolder("c:\\dummydicoms");
 
-        verify(fileFolderReader).ReadFilesFromFolder("c:\\dummydicoms");
+        verify(fileFolderReader).ReadFilesFromFolder("c:\\dummydicoms", ".DCM");
 
     }
 }

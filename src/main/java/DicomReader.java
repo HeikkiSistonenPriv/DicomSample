@@ -7,6 +7,6 @@ public class DicomReader {
         _fileFolderReader = fileFolderReader;
     }
     public void ReadFolder(String folderPath) {
-        _fileFolderReader.ReadFilesFromFolder(folderPath);
+        _fileFolderReader.ReadFilesFromFolder(folderPath, ".DCM");
     }
 }
