@@ -34,19 +34,10 @@
             <scope>test</scope>
         </dependency>
 
-       <!-- <dependency>
+      <dependency>
             <groupId>org.dcm4che</groupId>
             <artifactId>dcm4che-core</artifactId>
             <version>5.21.0</version>
-        </dependency>
-
-        to save time -->
-
-        <dependency>
-            <groupId>org.dcm4che</groupId>
-            <artifactId>dcm4che-all</artifactId>
-            <version>3.3.8</version>
-            <type>pom</type>
         </dependency>
 
 
