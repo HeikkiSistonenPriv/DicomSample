@@ -2,15 +2,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DicomFolderReader {
-    IFileFolderReader _fileFolderReader;
-    IDcm4Reader _dcm4Reader;
-    public DicomFolderReader(IFileFolderReader fileFolderReader, IDcm4Reader dcm4Reader)
+    private SimpleFileReader fileFolderReader;
+    private Dcm4ReaderBridge dcm4Reader;
+
+    public DicomFolderReader(SimpleFileReader simpleFileReader, Dcm4ReaderBridge dcm4ReaderBridge)
     {
-        _fileFolderReader = fileFolderReader;
-        _dcm4Reader = dcm4Reader;
+        fileFolderReader = simpleFileReader;
+        dcm4Reader = dcm4ReaderBridge;
     }
     public List<DicomEntity> ReadFolder(String folderPath) {
-        _fileFolderReader.ReadFilesFromFolder(folderPath, ".DCM");
+        fileFolderReader.ReadFilesFromFolder(folderPath, ".DCM");
 
         return new ArrayList<DicomEntity>();
     }

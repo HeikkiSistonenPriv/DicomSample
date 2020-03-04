@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
 
-public class Dcm4Reader implements IDcm4Reader {
+public class Dcm4Reader implements Dcm4ReaderBridge {
 
     public List<Attributes> ReadDicomData(List<Path> filePaths){
         try {

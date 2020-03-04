@@ -11,8 +11,8 @@ public class DicomReaderTests {
     @Test
     public void WhenReadingDicomData_DataShouldBeReadFromFileSystemAtGivenFolder()
     {
-        FileFolderReader fileFolderReader = mock(FileFolderReader.class);
-        Dcm4Reader dcm4Reader = mock(Dcm4Reader.class);
+        SimpleFileReader fileFolderReader = mock(FileFolderReader.class);
+        Dcm4ReaderBridge dcm4Reader = mock(Dcm4Reader.class);
 
         DicomFolderReader dicomReader = new DicomFolderReader(fileFolderReader, dcm4Reader);
         dicomReader.ReadFolder("c:\\dummydicoms");
@@ -23,8 +23,8 @@ public class DicomReaderTests {
     @Test
     public void WhenReadingDicomData_ListOfDicomEntitiesShouldBeReturned()
     {
-        FileFolderReader fileFolderReader = mock(FileFolderReader.class);
-        Dcm4Reader dcm4Reader = mock(Dcm4Reader.class);
+        SimpleFileReader fileFolderReader = mock(FileFolderReader.class);
+        Dcm4ReaderBridge dcm4Reader = mock(Dcm4Reader.class);
         DicomFolderReader dicomReader = new DicomFolderReader(fileFolderReader,dcm4Reader);
 
         List<DicomEntity> dicomEntities=   dicomReader.ReadFolder("c:\\dummydicoms");

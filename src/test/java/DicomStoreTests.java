@@ -10,7 +10,7 @@ public class DicomStoreTests {
     @Test
     public void WhenStoringDicomData_DataShouldBePersistedToRepo()
     {
-        DicomRepository dicomRepository = mock(DicomRepository.class);
+        Repository dicomRepository = mock(DicomRepository.class);
         DicomStorer dicomStorer = new DicomStorer(dicomRepository);
         dicomStorer.Store(null);
 
@@ -20,7 +20,7 @@ public class DicomStoreTests {
     @Test
     public void WhenStoringDicomData_AllGivenDicomsShouldBeSaved()
     {
-        DicomRepository dicomRepository = mock(DicomRepository.class);
+        Repository dicomRepository = mock(DicomRepository.class);
         DicomStorer dicomStorer = new DicomStorer(dicomRepository);
         ArrayList<DicomEntity> dicoms = new ArrayList<>();
         dicomStorer.Store(dicoms);

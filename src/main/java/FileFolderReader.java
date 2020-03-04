@@ -5,7 +5,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class FileFolderReader implements IFileFolderReader {
+public class FileFolderReader implements SimpleFileReader {
     @Override
     public List<Path> ReadFilesFromFolder(String folderPath, String extension)  {
         List<Path> filepahts= null;
