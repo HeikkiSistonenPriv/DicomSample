@@ -5,8 +5,8 @@ public class DicomStorer {
     public DicomStorer(Repository repository) {
         dicomRepository = repository;
     }
-    public void Store(List<DicomEntity> dicoms) {
-        dicomRepository.Save(dicoms);
+    public void store(List<DicomEntity> dicoms) {
+        dicomRepository.save(dicoms);
 
     }
 }

@@ -12,9 +12,9 @@ public class DicomStoreTests {
     {
         Repository dicomRepository = mock(DicomRepository.class);
         DicomStorer dicomStorer = new DicomStorer(dicomRepository);
-        dicomStorer.Store(null);
+        dicomStorer.store(null);
 
-        verify(dicomRepository).Save(null);
+        verify(dicomRepository).save(null);
     }
 
     @Test
@@ -23,9 +23,9 @@ public class DicomStoreTests {
         Repository dicomRepository = mock(DicomRepository.class);
         DicomStorer dicomStorer = new DicomStorer(dicomRepository);
         ArrayList<DicomEntity> dicoms = new ArrayList<>();
-        dicomStorer.Store(dicoms);
+        dicomStorer.store(dicoms);
 
-        verify(dicomRepository).Save(dicoms);
+        verify(dicomRepository).save(dicoms);
     }
 
 

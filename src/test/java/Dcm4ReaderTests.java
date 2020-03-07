@@ -7,7 +7,7 @@ public class Dcm4ReaderTests {
         Dcm4ReaderBridge dcm4Reader = new Dcm4Reader();
         SimpleFileReader fileFolderReader = new FileFolderReader();
 
-        dcm4Reader.ReadDicomData(fileFolderReader.ReadFilesFromFolder("c:\\dummydicoms", ".DCM"));
+        dcm4Reader.readDicomData(fileFolderReader.readFilesFromFolder("c:\\dummydicoms", ".DCM"));
 
     }
 }

@@ -4,5 +4,5 @@ import java.nio.file.Path;
 import java.util.List;
 
 public interface Dcm4ReaderBridge {
-    List<Attributes> ReadDicomData(List<Path> filePaths);
+    DicomEntity readDicomData(List<Path> filePaths);
 }

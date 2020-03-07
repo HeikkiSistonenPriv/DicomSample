@@ -5,17 +5,45 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
+import org.dcm4che3.data.Tag;
+
 
 public class Dcm4Reader implements Dcm4ReaderBridge {
 
-    public List<Attributes> ReadDicomData(List<Path> filePaths){
+    public DicomEntity readDicomData(List<Path> filePaths){
         try {
-            DicomInputStream din = new DicomInputStream(new File(filePaths.get(2).toAbsolutePath().toString()));
-            Attributes attributes =  din.getFileMetaInformation();
-            return null;
+            File file = new File(filePaths.get(3).toAbsolutePath().toString());
+            DicomInputStream din = new DicomInputStream(file);
+            Attributes attributes = din.readDataset(-1, -1); //read all to save time
+            return parseAttributesToDicomEntity(attributes);
         } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
     }
+
+    private DicomEntity parseAttributesToDicomEntity(Attributes attributes) {
+        DicomEntity dicomEntity = new DicomEntity();
+        dicomEntity.SOPInstanceUID = attributes.getString(Tag.SOPInstanceUID);
+        Patient patient = new Patient();
+        patient.Id = attributes.getString(Tag.PatientID);
+        patient.Name = attributes.getString(Tag.PatientName);
+        patient.patientBirthDate = attributes.getString(Tag.PatientBirthDate);
+        patient.patientSex = attributes.getString(Tag.PatientSex);
+        dicomEntity.patient = patient;
+
+        Study study = new Study();
+        study.studyInstanceUid = attributes.getString(Tag.StudyInstanceUID);
+        study.description = attributes.getString(Tag.StudyDescription);
+        Series series = new Series();
+        series.seriesInstanceUid = attributes.getString(Tag.SeriesInstanceUID);
+        series.description = attributes.getString(Tag.SeriesDescription);
+        study.series = series;
+        dicomEntity.study =study;
+
+        return dicomEntity;
+
+    }
 }
+
+

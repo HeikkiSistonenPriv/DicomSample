@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 public class FileFolderReader implements SimpleFileReader {
     @Override
-    public List<Path> ReadFilesFromFolder(String folderPath, String extension)  {
+    public List<Path> readFilesFromFolder(String folderPath, String extension)  {
         List<Path> filepahts= null;
         try {
             filepahts = Files.walk(Paths.get(folderPath))

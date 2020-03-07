@@ -15,9 +15,9 @@ public class DicomReaderTests {
         Dcm4ReaderBridge dcm4Reader = mock(Dcm4Reader.class);
 
         DicomFolderReader dicomReader = new DicomFolderReader(fileFolderReader, dcm4Reader);
-        dicomReader.ReadFolder("c:\\dummydicoms");
+        dicomReader.readFolder("c:\\dummydicoms");
 
-        verify(fileFolderReader).ReadFilesFromFolder("c:\\dummydicoms", ".DCM");
+        verify(fileFolderReader).readFilesFromFolder("c:\\dummydicoms", ".DCM");
     }
 
     @Test
@@ -27,7 +27,7 @@ public class DicomReaderTests {
         Dcm4ReaderBridge dcm4Reader = mock(Dcm4Reader.class);
         DicomFolderReader dicomReader = new DicomFolderReader(fileFolderReader,dcm4Reader);
 
-        List<DicomEntity> dicomEntities=   dicomReader.ReadFolder("c:\\dummydicoms");
+        List<DicomEntity> dicomEntities=   dicomReader.readFolder("c:\\dummydicoms");
         assertFalse(dicomEntities.isEmpty());
     }
 }

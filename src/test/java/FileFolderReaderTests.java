@@ -12,7 +12,7 @@ public class FileFolderReaderTests {
     public void WhenReadingFilesFromFolder_ConsoleShouldLogTheFilePaths()
     {
         SimpleFileReader fileFolderReader = new FileFolderReader();
-        fileFolderReader.ReadFilesFromFolder("C:\\dummydicoms",".DCM");
+        fileFolderReader.readFilesFromFolder("C:\\dummydicoms",".DCM");
     }
 
     @Test
@@ -20,7 +20,7 @@ public class FileFolderReaderTests {
     {
         SimpleFileReader fileFolderReader = new FileFolderReader();
 
-        List<Path> filePaths = fileFolderReader.ReadFilesFromFolder("C:\\dummydicoms", ".DCM");
+        List<Path> filePaths = fileFolderReader.readFilesFromFolder("C:\\dummydicoms", ".DCM");
         // to save time.
         filePaths.forEach(f -> {
             assertTrue(f.toAbsolutePath().toString().toUpperCase().endsWith(".DCM"));

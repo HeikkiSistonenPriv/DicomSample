@@ -1,7 +1,7 @@
 import java.util.List;
 
 public class DicomRepository implements Repository {
-    public void Save(List<DicomEntity> dicoms) {
+    public void save(List<DicomEntity> dicoms) {
 
     }
 }

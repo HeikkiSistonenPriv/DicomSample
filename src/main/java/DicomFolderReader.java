@@ -10,8 +10,8 @@ public class DicomFolderReader {
         fileFolderReader = simpleFileReader;
         dcm4Reader = dcm4ReaderBridge;
     }
-    public List<DicomEntity> ReadFolder(String folderPath) {
-        fileFolderReader.ReadFilesFromFolder(folderPath, ".DCM");
+    public List<DicomEntity> readFolder(String folderPath) {
+        fileFolderReader.readFilesFromFolder(folderPath, ".DCM");
 
         return new ArrayList<DicomEntity>();
     }
