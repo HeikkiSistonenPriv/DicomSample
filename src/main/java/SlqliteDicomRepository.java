@@ -11,7 +11,6 @@ public class SlqliteDicomRepository implements Repository {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             // start a transaction
             transaction = session.beginTransaction();
-            // save the student objects
             session.save(dicoms.get(0));
             transaction.commit();
         } catch (Exception e) {

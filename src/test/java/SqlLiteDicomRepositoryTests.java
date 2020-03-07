@@ -32,6 +32,7 @@ public class SqlLiteDicomRepositoryTests {
         patient.studies = studies;
 
         ent.patient =patient;
+        ent.SOPInstanceUID = "1.2.3.sop";
          dicoms.add(ent);
         repo.save(dicoms);
     }
