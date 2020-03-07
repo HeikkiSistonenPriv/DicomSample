@@ -4,6 +4,7 @@ import org.dcm4che3.io.DicomInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 import org.dcm4che3.data.Tag;
 
@@ -35,11 +36,18 @@ public class Dcm4Reader implements Dcm4ReaderBridge {
         Study study = new Study();
         study.studyInstanceUid = attributes.getString(Tag.StudyInstanceUID);
         study.description = attributes.getString(Tag.StudyDescription);
-        Series series = new Series();
-        series.seriesInstanceUid = attributes.getString(Tag.SeriesInstanceUID);
-        series.description = attributes.getString(Tag.SeriesDescription);
+        Serie serie = new Serie();
+        serie.seriesInstanceUid = attributes.getString(Tag.SeriesInstanceUID);
+        serie.description = attributes.getString(Tag.SeriesDescription);
+        ArrayList<Serie> series = new ArrayList<Serie>();
+        series.add(serie);
+
+
         study.series = series;
-        dicomEntity.study =study;
+
+        ArrayList<Study> studies = new ArrayList<Study>();
+        studies.add(study);
+        dicomEntity.patient.studies =studies;
 
         return dicomEntity;
 

@@ -1,8 +1,12 @@
 
-// Helper class to contain parsed dicom file data
+import javax.persistence.*;
+
+@Entity
+@Table(name = "DicomEntity")
 public class DicomEntity {
+    @Id
     public String SOPInstanceUID;
-    public Patient patient; // lets see how this really goes
-    public Study study;
+    @OneToOne
+    public Patient patient;
 
 }

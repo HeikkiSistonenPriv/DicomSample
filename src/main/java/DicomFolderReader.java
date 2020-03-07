@@ -1,3 +1,4 @@
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,8 +12,9 @@ public class DicomFolderReader {
         dcm4Reader = dcm4ReaderBridge;
     }
     public List<DicomEntity> readFolder(String folderPath) {
-        fileFolderReader.readFilesFromFolder(folderPath, ".DCM");
-
-        return new ArrayList<DicomEntity>();
+        List<Path> filePaths= fileFolderReader.readFilesFromFolder(folderPath, ".DCM");
+        ArrayList<DicomEntity> dicoms = new ArrayList<>();
+        dicoms.add(dcm4Reader.readDicomData(filePaths));
+        return dicoms;
     }
 }

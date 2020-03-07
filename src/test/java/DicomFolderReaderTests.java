@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-public class DicomReaderTests {
+public class DicomFolderReaderTests {
 
     @Test
     public void WhenReadingDicomData_DataShouldBeReadFromFileSystemAtGivenFolder()
@@ -30,4 +30,7 @@ public class DicomReaderTests {
         List<DicomEntity> dicomEntities=   dicomReader.readFolder("c:\\dummydicoms");
         assertFalse(dicomEntities.isEmpty());
     }
+
+
+
 }
